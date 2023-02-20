@@ -1,0 +1,30 @@
+package(default_visibility = ["//visibility:public"])
+
+load("//tools:defaults.bzl", "ts_library")
+
+ts_library(
+    name = "ngcc",
+    srcs = glob([
+        "*.ts",
+        "**/*.ts",
+    ]),
+    deps = [
+        "//packages:types",
+        "//packages/compiler",
+        "//packages/compiler-cli/src/ngtsc/annotations",
+        "//packages/compiler-cli/src/ngtsc/host",
+        "//packages/compiler-cli/src/ngtsc/metadata",
+        "//packages/compiler-cli/src/ngtsc/transform",
+        "//packages/compiler-cli/src/ngtsc/translator",
+        "@npm//@types/convert-source-map",
+        "@npm//@types/node",
+        "@npm//@types/shelljs",
+        "@npm//@types/source-map",
+        "@npm//@types/yargs",
+        "@npm//canonical-path",
+        "@npm//dependency-graph",
+        "@npm//magic-string",
+        "@npm//source-map",
+        "@npm//typescript",
+    ],
+)
